@@ -7,7 +7,6 @@ Static site satu halaman, tanpa framework JS. Total HTML sekitar 17 KB, CSS hasi
 Syarat: Node.js 18 atau lebih baru.
 
 ```bash
-cd lp-rak
 npm install
 npm run build      # hasil: dist/output.css (sudah ada di zip ini)
 ```
