@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@source "../index.html";
+
+@theme {
+  --font-display: "Archivo", "Arial Narrow", sans-serif;
+  --font-sans: "Public Sans", system-ui, sans-serif;
+  --color-steel: #e8eced;
+  --color-steel-2: #c9d1d4;
+  --color-slate: #17242b;
+  --color-slate-2: #4a5b64;
+  --color-signal: #f5b700;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background: var(--color-steel); color: var(--color-slate); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: var(--font-display); font-stretch: 110%; letter-spacing: -0.015em; line-height: 1.08; }
+  :focus-visible { outline: 3px solid var(--color-slate); outline-offset: 3px; }
+  summary::-webkit-details-marker { display: none; }
+}
+
+@layer components {
+  .wrap { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
+  .btn-wa {
+    display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+    background: var(--color-signal); color: var(--color-slate); font-weight: 700;
+    padding: .9rem 1.5rem; border-radius: .375rem;
+    box-shadow: 0 3px 0 var(--color-slate); transition: transform .08s, box-shadow .08s;
+  }
+  .btn-wa:hover { filter: brightness(.96); }
+  .btn-wa:active { transform: translateY(3px); box-shadow: none; }
+  .band-dark .btn-wa { box-shadow: 0 3px 0 #000; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn-wa { transition: none; }
+}
